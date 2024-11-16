@@ -47,8 +47,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellSize: {x: 1, y: 2}
-  _color_1: {r: 0.9764706, g: 0.070588246, b: 0.44905806, a: 0.2784314}
-  _color_2: {r: 0.098039195, g: 0.9882353, b: 0.30147436, a: 0.2901961}
+  _color: {r: 0.7660377, g: 0.3107511, b: 0.64543307, a: 0.42745098}
+  _okMaterial: {fileID: 2100000, guid: 2c2c89157f4e9a243b5ff7f47d1af589, type: 2}
+  _noOkMaterial: {fileID: 2100000, guid: a02f5e94ba847544dab4110c7ad2abf7, type: 2}
+  _flyingMaterial: {fileID: 2100000, guid: e32868f779d2d57499a1be9dbadb555f, type: 2}
+  _meshRenderer:
+  - {fileID: 1145331186526315405}
+  - {fileID: 1882432603819915736}
 --- !u!1 &4376917931704996239
 GameObject:
   m_ObjectHideFlags: 0
