@@ -51,7 +51,7 @@ MonoBehaviour:
   _okMaterial: {fileID: 2100000, guid: 2c2c89157f4e9a243b5ff7f47d1af589, type: 2}
   _noOkMaterial: {fileID: 2100000, guid: a02f5e94ba847544dab4110c7ad2abf7, type: 2}
   _flyingMaterial: {fileID: 2100000, guid: e32868f779d2d57499a1be9dbadb555f, type: 2}
-  _meshRenderer:
+  _meshRenderers:
   - {fileID: 1145331186526315405}
   - {fileID: 1882432603819915736}
 --- !u!1 &4376917931704996239

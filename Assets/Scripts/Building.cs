@@ -5,43 +5,52 @@ public class Building : MonoBehaviour
     [SerializeField] private Vector2 _cellSize = Vector2Int.one;
     [SerializeField] private Color _color;
     [Space]
-    [SerializeField] private Material _okMaterial;
-    [SerializeField] private Material _noOkMaterial;
-    [SerializeField] private Material _flyingMaterial;
-    [SerializeField] private MeshRenderer[] _meshRenderer;
+    //[SerializeField] private Material _okMaterial;
+    //[SerializeField] private Material _noOkMaterial;           // for 3D
+    //[SerializeField] private Material _flyingMaterial;
+    //[SerializeField] private MeshRenderer[] _meshRenderers;
+
+    [SerializeField] private Sprite _okSprite;
+    [SerializeField] private Sprite _noOkSprite;              // for 2D
+    [SerializeField] private Sprite _flyingSprite;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Transform _spriteTransform;
+    private Transform _camera;
+
+    private void Awake()
+    {
+        _camera = Camera.main.transform;
+    }
 
     public void OkMAterial()
     {
-        Debug.Log("OkMAterial");
+        //foreach (var renderer in _meshRenderers)     // for 3D
+        //    renderer.material = _okMaterial;
 
-        foreach (var renderer in _meshRenderer)
-        {
-            renderer.material = _okMaterial;
-            Debug.Log(renderer.material.name);
-        }
+        _spriteRenderer.sprite = _okSprite;            // for 2D
+        _spriteRenderer.color = new(255, 255, 255, 255);
     }
 
     public void NoOkMAterial()
     {
-        Debug.Log("NoOkMAterial");
-        foreach (var renderer in _meshRenderer)
-        {
-            renderer.material = _noOkMaterial;
-            Debug.Log(renderer.material.name);
-        }
+        //foreach (var renderer in _meshRenderers)     // for 3D
+        //    renderer.material = _noOkMaterial;
+
+
+        _spriteRenderer.sprite = _noOkSprite;          // for 2D
+        _spriteRenderer.color = new(255, 255, 255, 50);
     }
 
     public void FlyingManerial()
     {
-        Debug.Log("FlyingManerial");
-        foreach (var renderer in _meshRenderer)
-        {
-            renderer.material = _flyingMaterial;
-            Debug.Log(renderer.material.name);
-        }
+        //foreach (var renderer in _meshRenderers)    // for 3D
+        //    renderer.material = _flyingMaterial;
+
+        _spriteRenderer.sprite = _flyingSprite;        // for 2D
+        _spriteRenderer.color = new(255, 255, 255, 50);
     }
 
-    public Vector2 CellSize { get => _cellSize;}
+    public Vector2 CellSize { get => _cellSize; }
 
     private void OnDrawGizmosSelected()
     {
@@ -54,5 +63,11 @@ public class Building : MonoBehaviour
                 Gizmos.DrawCube(transform.position + new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
             }
         }
+    }
+
+    private void Update()
+    {
+       
+        //_spriteTransform.LookAt(_camera);
     }
 }
